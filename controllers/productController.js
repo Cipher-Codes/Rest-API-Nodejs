@@ -8,7 +8,7 @@ async function getProducts(req, res) {
     try {
         const products = await Product.findAll()
 
-        res.writeHead(200, { 'Content-Type': 'application/json' })
+        res.writeHead(200, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin':'http://127.0.0.1:5500/'})
         res.end(JSON.stringify(products))
     } catch (error) {
         console.log(error)
